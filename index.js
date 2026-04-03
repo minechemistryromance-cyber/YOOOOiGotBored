@@ -44,23 +44,20 @@ function showQuestion() {
     const btn = document.createElement("button")
     btn.textContent = answer
     btn.addEventListener("click", () => {
-      if (!q.multiSelect) {
-        picks[q.category] = q.values[index]
-        btn.classList.add("selected")
-        setTimeout(() => {
-          current++
-          showQuestion()
-        }, 300)
-      } else {
-        btn.classList.toggle("selected")
-        if (!picks[q.category]) picks[q.category] = []
-        if (btn.classList.contains("selected")) {
-          picks[q.category].push(q.values[index])
-        } else {
-          picks[q.category] = picks[q.category].filter(v => v !== q.values[index])
-        }
-      }
-    })
+  if (!q.multiSelect) {
+    picks[q.category] = q.values[index]
+    document.querySelectorAll("#answers button:not(.next-btn)").forEach(b => b.classList.remove("selected"))
+    btn.classList.add("selected")
+  } else {
+    btn.classList.toggle("selected")
+    if (!picks[q.category]) picks[q.category] = []
+    if (btn.classList.contains("selected")) {
+      picks[q.category].push(q.values[index])
+    } else {
+      picks[q.category] = picks[q.category].filter(v => v !== q.values[index])
+    }
+  }
+})
     document.getElementById("answers").appendChild(btn)
   })
   const nextBtn = document.createElement("button")
