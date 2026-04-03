@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d0d0d;
+  color: #f0ede8;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+@media (max-width: 480px) {
+  body { padding: 1.5rem; }
+  #question { font-size: 1.3rem; }
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+}
+
+.header {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 3rem;
+}
+
+#question {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  min-height: 2.5rem;
+  transition: opacity 0.3s ease;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#answers button {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #f0ede8;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#answers button:hover {
+  border-color: #f0ede8;
+  background: #1a1a1a;
+}
+
+#answers button:active {
+  transform: scale(0.97);
+  background: #1a1a1a;
+}
+
+#answers button.selected {
+  background: #f0ede8;
+  color: #0d0d0d;
+  border-color: #f0ede8;
+}
+
+.next-btn {
+  margin-top: 6px;
+  border-color: transparent !important;
+  color: #888 !important;
+  font-size: 13px !important;
+  text-align: right !important;
+  padding: 8px 4px !important;
+  background: transparent !important;
+}
+
+.next-btn:hover {
+  color: #f0ede8 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+#result {
+  animation: fadeIn 0.5s ease;
+}
+
+.plan-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+#display {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 2;
+  margin-bottom: 2rem;
+  white-space: pre-line;
+}
+
+#restart {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#restart:hover {
+  border-color: #f0ede8;
+  color: #f0ede8;
+}
+
+#share-btn {
+  background: #f0ede8;
+  border: none;
+  color: #0d0d0d;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+#share-btn:hover {
+  background: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
